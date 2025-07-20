@@ -1,25 +1,18 @@
 num1 = int(input("Enter the first number: "))
 num2 = int(input("Enter the second number: "))
+operation = input("Choose the operation (+, -, *, /): ")
 
-d_type = input("Choose the operation (+, -, *, /): ")
-
-match d_type:
+match operation:
     case "+":
-        result = num1 + num2
-        print(f"The result is {result}.")
+        print(f"The result is {num1 + num2}.")
     case "-":
-        result = num1 - num2
-        print(f"The result is {result}.")
+        print(f"The result is {num1 - num2}.")
     case "*":
-        result = num1 * num2
-        print(f"The result is {result}.")
+        print(f"The result is {num1 * num2}.")
     case "/":
-        try:
-            result = num1 / num2
-            print(f"The result is {result}.")
-        except ZeroDivisionError:
+        if num2 == 0:
             print("Cannot divide by zero.")
+        else:
+            print(f"The result is {num1 / num2}.")
     case _:
         print("You have the wrong operation.")
-        
-        
